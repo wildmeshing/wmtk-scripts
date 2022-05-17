@@ -3,3 +3,4 @@ out/
 log/
 *.blend1
 __pycache__/
+input_data/
