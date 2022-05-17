@@ -1,7 +1,11 @@
+import plotly
+import plotly.graph_objects as go
 import numpy as np
 import re
 import subprocess
 import igl
+
+plotly.io.orca.config.use_xvfb = True
 
 basepath = '/home/zhongshi/Workspace/wmtk2d/build_release/'
 
@@ -82,6 +86,7 @@ def plot_clip(V, F, marker):
     plt = mp.Subplot(plt, vw, s=[1, 2, 1])
     vw = mp.Viewer(sh)
 
+
 class common_process:
     @classmethod
     def outpath(c):
@@ -94,12 +99,29 @@ class common_process:
     @classmethod
     def log_info(c):
         timer = parse_log(c.timer_regex, [
-                  (t, f'{c.logpath()}/{t}.log') for t in c.threads])
+            (t, f'{c.logpath()}/{t}.log') for t in c.threads])
         np.savetxt(f"{c.base}/timer.csv", np.asarray(timer), delimiter=",")
-
+        plot_scatter(f'{c.base}/scale.svg', np.asarray(timer))
 
     @classmethod
     def blender_preprocess(c, t=0):
         write_unit_scale_file(c.input, f'{c.outpath()}/{t}.obj')
         subprocess.run('blender -b render.blend -P blender.py',
                        shell=True, cwd=c.base)
+
+
+
+
+def plot_scatter(filename, timer):
+    histocolor = 'rgb(162, 155, 254)'
+
+    go.Figure(go.Scatter(x=timer[1:, 0], y=timer[1:, 1], mode='markers+lines',
+                         marker_line_width=1.5, marker_size=8,
+                         marker=dict(color=histocolor))
+              ).update_layout(xaxis_type="log", yaxis_type='log',
+                              paper_bgcolor='rgba(0,0,0,0)',
+                              plot_bgcolor='rgba(0,0,0,0)',
+                              yaxis=dict(gridcolor='grey',
+                                         gridwidth=0.5, zeroline=True),
+                              geo=dict(showframe=True)
+                              ).write_image(filename)

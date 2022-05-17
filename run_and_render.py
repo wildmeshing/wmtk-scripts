@@ -217,4 +217,4 @@ if __name__ == '__main__':
     for prog in [fig3_sec, fig4_rem, fig5_harmo, fig6_tw, fig7_secenv, fig8_rem_env]: 
         # prog.run()
         prog.log_info() 
-        prog.blender_preprocess(0)
+        # prog.blender_preprocess(0)
