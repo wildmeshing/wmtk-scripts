@@ -214,6 +214,7 @@ class fig1_fat(common_process):
         subprocess.run('blender -b render.blend -P blender.py', shell=True, cwd=c.base)
    
 if __name__ == '__main__':
-    # fig6_tw.blender_preprocess(0)
-    fig1_fat.run()
-    fig1_fat.blender_preprocess(0)
+    for prog in [fig3_sec, fig4_rem, fig5_harmo, fig6_tw, fig7_secenv, fig8_rem_env]: 
+        # prog.run()
+        prog.log_info() 
+        prog.blender_preprocess(0)

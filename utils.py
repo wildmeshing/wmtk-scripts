@@ -3,7 +3,7 @@ import re
 import subprocess
 import igl
 
-basepath = '/home/zhongshi/Workspace/wmtk-freeze/build_release/'
+basepath = '/home/zhongshi/Workspace/wmtk2d/build_release/'
 
 apps = dict(remesh='app/remeshing_app',
             tetra='app/tetwild/tetwild',
@@ -32,8 +32,7 @@ def parse_log(regex, loglist):
             assert len(matches) == 1
             time = float(rec.match(matches[0]).group(1))
             timer.append((t, time))
-    print(timer)
-    np.savetxt("timer.csv", np.asarray(timer), delimiter=",")
+    return (timer)
 
 
 def write_unit_scale_file(ref, output):
@@ -94,8 +93,10 @@ class common_process:
 
     @classmethod
     def log_info(c):
-        parse_log(c.timer_regex, [
+        timer = parse_log(c.timer_regex, [
                   (t, f'{c.logpath()}/{t}.log') for t in c.threads])
+        np.savetxt(f"{c.base}/timer.csv", np.asarray(timer), delimiter=",")
+
 
     @classmethod
     def blender_preprocess(c, t=0):
