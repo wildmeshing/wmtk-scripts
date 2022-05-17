@@ -1,0 +1,5 @@
+wmtk_render/
+out/
+log/
+*.blend1
+__pycache__/
