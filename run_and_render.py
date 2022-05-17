@@ -4,46 +4,80 @@ import igl
 import re
 import subprocess
 
-from run_utils import *
-
-def slicetmesh(tetv, tett, clipper):
-    # clipper = np.array([0.9, 0.4,0.7,-2.8]) octocat
-    mesh_faces = igl.boundary_facets(tett)
-
-    def clip_and_color():
-        bc = igl.barycenter(tetv, tett)
-        x, y, z = tetv[tett].mean(axis=1).T
-        # print((bc*clipper[:3]).sum(axis=1))
-        clip_index = (bc*clipper[:3]).sum(axis=1) + clipper[3] >= 0
-        # print(clip_index)
-        # clip_index = np.where(0.9*x + 0.4*y + 0.7*z - 2.8 >= 0)[0]
-
-        fc = igl.boundary_facets(tett[clip_index])
-
-        original_faces = set(tuple(sorted(f)) for f in mesh_faces)
-        from_facet = [i for i, f in enumerate(
-            fc) if tuple(sorted(f)) in original_faces]
-        return tetv, fc, from_facet
-
-    V, F, facet = clip_and_color()
-    marker = np.zeros(len(F))
-    marker[facet] = 1
-    return V, F, marker
+from utils import *
 
 
-def plot_clip(V, F, marker):
-    colorA = np.array([192, 192, 192])/256
-    colorB = np.array([249, 161, 94])/256
+class fig3_sec(common_process):
+    threads = [0, 1, 2, 4, 8, 16, 32]
+    base = 'fig3-statue-sec/'
+    input = f'input_data/Sapphos_Head.stl'
+    timer_regex = r"^.*runtime (.*)$"
+    exe = apps['sec']
 
-    full_color = np.tile(colorA, (F.shape[0], 1))
-    full_color[marker == 1] = colorB
+    @classmethod
+    def run(cls):
+        for t in cls.threads[::-1]:
+            output = f'{cls.outpath()}/{t}.obj'
+            params = [basepath + cls.exe, cls.input,
+                      output] + f'-j {t}'.split()
+            print(' '.join(params))
+            with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
+                subprocess.run(params, stdout=fp)
 
-    plt = None
-    sh = dict(width=1000, height=1000, wireframe=True)
-    vw = mp.Viewer(sh)
-    vw.add_mesh(V, F, c=full_color, shading=sh)
-    plt = mp.Subplot(plt, vw, s=[1, 2, 1])
-    vw = mp.Viewer(sh)
+
+class fig4_rem(common_process):
+    threads = [0, 1, 2, 4, 8, 16, 32]
+    base = 'fig4-hellskull-UniRem/'
+    input = f'input_data/hellSkull_126k.stl'
+    timer_regex = r"^.*runtime (.*)$"
+    exe = apps['remesh']
+
+    @classmethod
+    def run(cls):
+        for t in cls.threads[::-1]:
+            output = f'{cls.outpath()}/{t}.obj'
+            params = [basepath + cls.exe, cls.input, output] + \
+                f'-j {t} -r 0.01 -f 0'.split()
+            print(' '.join(params))
+            with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
+                subprocess.run(params, stdout=fp)
+
+
+class fig7_secenv(common_process):
+    threads = [0, 1, 2, 4, 8, 16, 32]
+    base = 'fig7-eins-secenv/'
+    input = f'input_data/einstein_big.stl'
+    timer_regex = r"^.*runtime (.*)$"
+    exe = apps['sec']
+
+    @classmethod
+    def run(cls):
+        for t in cls.threads[::-1]:
+            output = f'{cls.outpath()}/{t}.obj'
+            params = [basepath + cls.exe, cls.input, output] + \
+                f'-e 1e-3 -j {t} -t 1e-2'.split()
+            print(' '.join(params))
+            with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
+                subprocess.run(params, stdout=fp)
+
+
+class fig8_rem_env(common_process):
+    threads = [0, 1, 2, 4, 8, 16, 32]
+    base = 'fig8-headported-UniRemEnv/'
+    input = f'input_data/head_-_ported_-_scaled.stl'
+    timer_regex = r"^.*runtime (.*)$"
+    exe = apps['remesh']
+
+    @classmethod
+    def run(cls):
+        for t in cls.threads[::-1]:
+            output = f'{cls.outpath()}/{t}.obj'
+            params = [basepath + cls.exe, cls.input, output] + \
+                f'-e 1e-3 -j {t} -r 0.01 -f 0'.split()
+            print(' '.join(params))
+            with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
+                subprocess.run(params, stdout=fp)
+
 
 
 class fig5_harmo(common_process):
