@@ -68,7 +68,7 @@ class common_process:
 class fig3_sec(common_process):
     threads = [0, 1, 2, 4, 8, 16, 32]
     base = 'fig3-statue-sec/'
-    input = f'{base}/Sapphos_Head.stl'
+    input = f'input_data/Sapphos_Head.stl'
     timer_regex = r"^.*runtime (.*)$"
     exe = apps['sec']
 
@@ -86,7 +86,7 @@ class fig3_sec(common_process):
 class fig4_rem(common_process):
     threads = [0, 1, 2, 4, 8, 16, 32]
     base = 'fig4-hellskull-UniRem/'
-    input = f'{base}/hellSkull_126k.stl'
+    input = f'input_data/hellSkull_126k.stl'
     timer_regex = r"^.*runtime (.*)$"
     exe = apps['remesh']
 
@@ -104,7 +104,7 @@ class fig4_rem(common_process):
 class fig7_secenv(common_process):
     threads = [0, 1, 2, 4, 8, 16, 32]
     base = 'fig7-eins-secenv/'
-    input = f'{base}/einstein_big.stl'
+    input = f'input_data/einstein_big.stl'
     timer_regex = r"^.*runtime (.*)$"
     exe = apps['sec']
 
@@ -122,7 +122,7 @@ class fig7_secenv(common_process):
 class fig8_rem_env(common_process):
     threads = [0, 1, 2, 4, 8, 16, 32]
     base = 'fig8-headported-UniRemEnv/'
-    input = f'{base}/head_-_ported_-_scaled.stl'
+    input = f'input_data/head_-_ported_-_scaled.stl'
     timer_regex = r"^.*runtime (.*)$"
     exe = apps['remesh']
 

@@ -49,7 +49,7 @@ def plot_clip(V, F, marker):
 class fig5_harmo(common_process):
     base = 'fig5-gauss-harm/'
     threads = [0, 1, 2, 4, 8, 16, 32]
-    input = f'{base}/gaussian_points_1M.ply'
+    input = f'input_data/gaussian_points_1M.ply'
     exe = apps['harmo']
     timer_regex = r"^.*Time cost: (.*)$"
 
@@ -78,7 +78,7 @@ class fig5_harmo(common_process):
 class fig6_tw(common_process):
     base = 'fig6-octocat-tw/'
     threads = [0, 1, 2, 4, 8, 16, 32]
-    input = f'{base}/32770.stl'
+    input = f'input_data/32770.stl'
     exe = apps['tetra']
     timer_regex = r"^.*total time (.*)s$"
 
@@ -110,7 +110,7 @@ class fig6_tw(common_process):
 class fig1_fat(common_process):
     base = 'fig1-fat/'
     threads = [0, 1, 2, 4, 8, 16, 32]
-    input = f'{base}/39507.stl'
+    input = f'input_data/39507.stl'
     
     timer_regex = r"^.*total time (.*)s$"
 
