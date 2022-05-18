@@ -7,7 +7,7 @@ import igl
 
 plotly.io.orca.config.use_xvfb = True
 
-basepath = '/home/zhongshi/Workspace/wmtk2d/build_release/'
+basepath = '/home/zhongshi/Workspace/wildmeshing-toolkit/buildr/'
 
 apps = dict(remesh='app/remeshing_app',
             tetra='app/tetwild/tetwild',
