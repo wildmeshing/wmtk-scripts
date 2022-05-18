@@ -123,6 +123,23 @@ class fig4_rem(common_process):
             with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
                 subprocess.run(params, stdout=fp)
 
+class fig4_lucy_rem(common_process):
+    threads = [0, 1, 2, 4, 8, 16, 32]
+    base = 'fig4-lucy-UniRem/'
+    input = f'input_data/120628.stl'
+    timer_regex = r"^.*runtime (.*)$"
+    exe = apps['remesh']
+
+    @classmethod
+    def run(cls):
+        for t in cls.threads[::-1]:
+            output = f'{cls.outpath()}/{t}.obj'
+            params = [basepath + cls.exe, cls.input, output] + \
+                f'-j {t} -r 0.01 -f 0'.split()
+            print(' '.join(params))
+            with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
+                subprocess.run(params, stdout=fp)
+
 
 class fig7_secenv(common_process):
     threads = [0, 1, 2, 4, 8, 16, 32]
@@ -193,7 +210,7 @@ class fig5_harmo(common_process):
 class fig6_tw(common_process):
     base = 'fig6-octocat-tw/'
     threads = [0, 1, 2, 4, 8, 16, 32]
-    input = f'input_data/32770.stl'
+    input = f'input_data/dragon.off'
     exe = apps['tetra']
     timer_regex = r"^.*total time (.*)s$"
 
@@ -225,6 +242,7 @@ class fig6_tw(common_process):
 
 
 if __name__ == '__main__':
-    for prog in [fig6_tw]:
+    for prog in [fig4_lucy_rem]:
         prog.run()
         prog.log_info()
+        prog.blender_preprocess()

@@ -1,8 +1,10 @@
 wmtk_render/
-out/*.obj
-out/*.msh
-log/*.log
+*/out/*.obj
+*/out/*.msh
+*/out/*.log
+*/log/*.log
 *.blend1
 __pycache__/
 input_data/
 *.msh
+backup_*
