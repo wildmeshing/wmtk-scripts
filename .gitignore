@@ -1,6 +1,7 @@
 wmtk_render/
-out/
-log/
+out/*.obj
+out/*.msh
+log/*.log
 *.blend1
 __pycache__/
 input_data/
