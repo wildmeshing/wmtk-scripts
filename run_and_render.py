@@ -243,6 +243,6 @@ class fig6_tw(common_process):
 
 if __name__ == '__main__':
     for prog in [fig4_lucy_rem]:
-        prog.run()
-        prog.log_info()
+        # prog.run()
+        # prog.log_info()
         prog.blender_preprocess()
