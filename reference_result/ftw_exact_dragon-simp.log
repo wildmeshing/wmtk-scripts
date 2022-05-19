@@ -1,0 +1,958 @@
+6 10 12 2 9 5 16 13 0 14 4 1 19 8 18 11 3 17 15 7 
+TBB threads 1
+[2022-05-19 11:31:32.280] [float-tetwild] [debug] Loading mesh at /home/zhongshi/Workspace/wildmeshing-toolkit/buildr/dragon-simp.obj...
+[2022-05-19 11:31:32.280] [geogram] [info] Loading file /home/zhongshi/Workspace/wildmeshing-toolkit/buildr/dragon-simp.obj...
+[2022-05-19 11:31:32.299] [geogram] [info] (FP64) nb_v:11390 nb_e:0 nb_f:22798 nb_b:86 tri:1 dim:3
+[2022-05-19 11:31:32.299] [geogram] [info] Attributes on vertices: point[3]
+bbox_diag_length = 1.30144
+ideal_edge_length = 0.0650719
+stage = 1
+eps_input = 0.00130144
+eps = 0.00130144
+eps_simplification = 0.00104115
+eps_coplanar = 1.30144e-06
+dd = 0.000867625
+dd_simplification = 0.0006941
+[2022-05-19 11:31:32.385] [float-tetwild] [info] remove duplicates: 
+[2022-05-19 11:31:32.385] [float-tetwild] [info] #v: 11390 -> 11324
+[2022-05-19 11:31:32.385] [float-tetwild] [info] #f: 22798 -> 22798
+#boundary_e1 = 28
+#boundary_e2 = 2
+[2022-05-19 11:31:32.404] [float-tetwild] [info] preprocessing 0.023079s
+[2022-05-19 11:31:32.404] [float-tetwild] [info] 
+[2022-05-19 11:31:32.404] [float-tetwild] [debug] min = -0.564804 -0.417354 -0.288039
+[2022-05-19 11:31:32.404] [float-tetwild] [debug] max = 0.56467 0.41701 0.28837
+[2022-05-19 11:31:32.481] [float-tetwild] [info] #v = 12243
+[2022-05-19 11:31:32.481] [float-tetwild] [info] #t = 75851
+[2022-05-19 11:31:32.481] [float-tetwild] [info] tetrahedralizing 0.07718s
+[2022-05-19 11:31:32.481] [float-tetwild] [info] 
+[2022-05-19 11:31:32.482] [float-tetwild] [info] triangle insertion start, #f = 22686, #v = 12243, #t = 75851
+[2022-05-19 11:31:32.514] [float-tetwild] [info] matched #f = 19693, uninserted #f = 2993
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] inserting f1000... 0 failed
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] snapped 1/133
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] #v = 12471/12474
+[2022-05-19 11:31:32.557] [float-tetwild] [debug] #t = 77130/77144
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] inserting f2000... 0 failed
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] snapped 5/259
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] #v = 12704/12716
+[2022-05-19 11:31:32.591] [float-tetwild] [debug] #t = 78378/78432
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] inserting f3000... 0 failed
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] snapped 5/400
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] #v = 12992/13016
+[2022-05-19 11:31:32.629] [float-tetwild] [debug] #t = 79929/80036
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] inserting f4000... 0 failed
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] snapped 6/510
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] #v = 13192/13219
+[2022-05-19 11:31:32.658] [float-tetwild] [debug] #t = 81038/81159
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] inserting f5000... 0 failed
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] snapped 8/638
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] #v = 13478/13514
+[2022-05-19 11:31:32.694] [float-tetwild] [debug] #t = 82535/82697
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] inserting f6000... 0 failed
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] snapped 12/782
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] #v = 13786/13825
+[2022-05-19 11:31:32.735] [float-tetwild] [debug] #t = 84161/84336
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] inserting f7000... 0 failed
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] snapped 15/903
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] #v = 14168/14220
+[2022-05-19 11:31:32.772] [float-tetwild] [debug] #t = 86152/86384
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] inserting f8000... 0 failed
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] snapped 17/1050
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] #v = 14527/14586
+[2022-05-19 11:31:32.815] [float-tetwild] [debug] #t = 88037/88303
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] inserting f9000... 0 failed
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] snapped 21/1180
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] #v = 14952/15017
+[2022-05-19 11:31:32.855] [float-tetwild] [debug] #t = 90259/90554
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] inserting f10000... 0 failed
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] snapped 23/1318
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] #v = 15322/15395
+[2022-05-19 11:31:32.896] [float-tetwild] [debug] #t = 92190/92523
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] inserting f11000... 0 failed
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] snapped 27/1446
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] #v = 15702/15781
+[2022-05-19 11:31:32.936] [float-tetwild] [debug] #t = 94140/94501
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] inserting f12000... 0 failed
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] snapped 29/1582
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] #v = 16132/16224
+[2022-05-19 11:31:32.980] [float-tetwild] [debug] #t = 96346/96769
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] inserting f13000... 0 failed
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] snapped 37/1720
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] #v = 16710/16814
+[2022-05-19 11:31:33.026] [float-tetwild] [debug] #t = 99377/99855
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] inserting f14000... 0 failed
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] snapped 42/1831
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] #v = 17066/17183
+[2022-05-19 11:31:33.062] [float-tetwild] [debug] #t = 101220/101757
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] inserting f15000... 0 failed
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] snapped 49/1952
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] #v = 17437/17564
+[2022-05-19 11:31:33.100] [float-tetwild] [debug] #t = 103111/103696
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] inserting f16000... 0 failed
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] snapped 53/2089
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] #v = 18012/18155
+[2022-05-19 11:31:33.147] [float-tetwild] [debug] #t = 106047/106709
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] inserting f17000... 0 failed
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] snapped 68/2207
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] #v = 18594/18749
+[2022-05-19 11:31:33.191] [float-tetwild] [debug] #t = 109053/109772
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] inserting f18000... 0 failed
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] snapped 73/2350
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.238] [float-tetwild] [debug] #v = 19127/19287
+[2022-05-19 11:31:33.239] [float-tetwild] [debug] #t = 111773/112513
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] inserting f19000... 0 failed
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] snapped 83/2493
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.291] [float-tetwild] [debug] #v = 19720/19894
+[2022-05-19 11:31:33.292] [float-tetwild] [debug] #t = 114757/115560
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] inserting f20000... 0 failed
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] snapped 87/2625
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] #v = 20539/20734
+[2022-05-19 11:31:33.344] [float-tetwild] [debug] #t = 118954/119852
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] inserting f21000... 0 failed
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] snapped 99/2754
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] #v = 21248/21464
+[2022-05-19 11:31:33.395] [float-tetwild] [debug] #t = 122584/123580
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] inserting f22000... 0 failed
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] snapped 112/2894
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 	- time_find_cutting_tets = 0s (total 0s)
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 	- time_cut_mesh = 0s (total 0s)
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 	- time_get_intersecting_edges_and_points = 0s (total 0s)
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points1 = 0s
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points2 = 0s
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points3 = 0s
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 		- time_get_intersecting_edges_and_points4 = 0s
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 	- time_subdivide_tets = 0s (total 0s)
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 	- time_push_new_tets = 0s (total 0s)
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] 	- time_simplify_subdivision_result = 0s (total 0s)
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] #v = 22034/22270
+[2022-05-19 11:31:33.452] [float-tetwild] [debug] #t = 126605/127698
+[2022-05-19 11:31:33.490] [float-tetwild] [info] insert_one_triangle * n done, #v = 22780, #t = 130238
+[2022-05-19 11:31:33.490] [float-tetwild] [info] uninserted #f = 0/2993
+[2022-05-19 11:31:33.490] [float-tetwild] [info] total timing: 0s
+[2022-05-19 11:31:33.552] [float-tetwild] [info] pair_track_surface_fs done
+#boundary_e1 = 28
+#boundary_e2 = 2
+[2022-05-19 11:31:33.563] [float-tetwild] [info] find_boundary_edges done
+[2022-05-19 11:31:33.569] [float-tetwild] [info] time1 = 0.005829
+[2022-05-19 11:31:33.570] [float-tetwild] [info] uninsert boundary #e = 0/30
+[2022-05-19 11:31:33.570] [float-tetwild] [info] time2 = 4e-06
+[2022-05-19 11:31:33.570] [float-tetwild] [info] time3 = 0.000428
+[2022-05-19 11:31:33.570] [float-tetwild] [info] time4 = 0.000206
+[2022-05-19 11:31:33.570] [float-tetwild] [info] time5 = 8e-05
+[2022-05-19 11:31:33.570] [float-tetwild] [info] time6 = 1e-06
+[2022-05-19 11:31:33.571] [float-tetwild] [info] uninserted #f = 0/2993
+known_surface_fs.size = 0
+known_not_surface_fs.size = 0
+[2022-05-19 11:31:36.575] [float-tetwild] [info] mark_surface_fs done
+[2022-05-19 11:31:36.583] [float-tetwild] [info] #b_edge1 = 30, #b_edges2 = 0
+[2022-05-19 11:31:36.588] [float-tetwild] [info] cutting 4.10617s
+[2022-05-19 11:31:36.588] [float-tetwild] [info] 
+initializing...
+
+#v = 22558
+#t = 129217
+max_energy = 2.42421e+08
+avg_energy = 2884.61
+edge collapsing...
+fixed 0 tangled element
+success(env) = 9442
+success = 11316(151739)
+success(env) = 253
+success = 284(109082)
+success(env) = 12
+success = 12(21208)
+success(env) = 1
+success = 1(1579)
+success(env) = 0
+success = 0(102)
+edge collapsing done!
+time = 38.9013s
+#v = 10945
+#t = 67313
+max_energy = 367.971
+avg_energy = 11.1288
+
+//////////////// pass 0 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 9901(9901)
+edge splitting done!
+time = 0.097111s
+#v = 20846
+#t = 120834
+max_energy = 367.971
+avg_energy = 10.2839
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 27
+success = 7788(152268)
+success(env) = 19
+success = 207(57342)
+success(env) = 3
+success = 9(11597)
+success(env) = 0
+success = 0(817)
+edge collapsing done!
+time = 10.4297s
+#v = 12842
+#t = 77285
+max_energy = 367.971
+avg_energy = 9.4429
+
+edge swapping...
+fixed 0 tangled element
+success3 = 8975
+success4 = 10939
+success5 = 1574
+success = 21488(88693)
+edge swapping done!
+time = 0.640019s
+#v = 12842
+#t = 69884
+max_energy = 125.561
+avg_energy = 7.67924
+
+vertex smoothing...
+success = 5370(11833)
+vertex smoothing done!
+time = 49.7256s
+#v = 12842
+#t = 69884
+max_energy = 89.5791
+avg_energy = 6.92107
+
+//////////////// pass 1 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 3867(3867)
+edge splitting done!
+time = 0.065284s
+#v = 16709
+#t = 88570
+max_energy = 89.5791
+avg_energy = 6.37588
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 519
+success = 3567(141295)
+success(env) = 24
+success = 197(62513)
+success(env) = 3
+success = 24(7421)
+success(env) = 2
+success = 3(969)
+success(env) = 0
+success = 0(247)
+edge collapsing done!
+time = 24.8849s
+#v = 12918
+#t = 70392
+max_energy = 69.6181
+avg_energy = 6.68304
+
+edge swapping...
+fixed 0 tangled element
+success3 = 1745
+success4 = 4675
+success5 = 558
+success = 6978(52269)
+edge swapping done!
+time = 0.39857s
+#v = 12918
+#t = 69205
+max_energy = 53.3653
+avg_energy = 6.37677
+
+vertex smoothing...
+success = 5152(11838)
+vertex smoothing done!
+time = 55.0624s
+#v = 12918
+#t = 69205
+max_energy = 53.3653
+avg_energy = 6.16923
+
+//////////////// pass 2 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 2929(2929)
+edge splitting done!
+time = 0.061989s
+#v = 15847
+#t = 82740
+max_energy = 53.3653
+avg_energy = 5.85868
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 183
+success = 2745(137060)
+success(env) = 5
+success = 109(35187)
+success(env) = 1
+success = 9(2890)
+success(env) = 0
+success = 1(180)
+success(env) = 0
+success = 0(3)
+edge collapsing done!
+time = 15.202s
+#v = 12983
+#t = 69599
+max_energy = 53.3653
+avg_energy = 6.10532
+
+edge swapping...
+fixed 0 tangled element
+success3 = 826
+success4 = 2628
+success5 = 309
+success = 3763(44315)
+edge swapping done!
+time = 0.318506s
+#v = 12983
+#t = 69082
+max_energy = 53.3653
+avg_energy = 5.9878
+
+vertex smoothing...
+success = 4870(11862)
+vertex smoothing done!
+time = 52.8695s
+#v = 12983
+#t = 69082
+max_energy = 47.831
+avg_energy = 5.89315
+
+//////////////// pass 3 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 2413(2413)
+edge splitting done!
+time = 0.059555s
+#v = 15396
+#t = 79839
+max_energy = 47.831
+avg_energy = 5.66744
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 87
+success = 2285(135020)
+success(env) = 0
+success = 83(23535)
+success(env) = 0
+success = 9(1390)
+success(env) = 0
+success = 3(54)
+success(env) = 0
+success = 0(25)
+edge collapsing done!
+time = 12.0071s
+#v = 13016
+#t = 69306
+max_energy = 47.831
+avg_energy = 5.87229
+
+edge swapping...
+fixed 0 tangled element
+success3 = 426
+success4 = 1616
+success5 = 155
+success = 2197(40542)
+edge swapping done!
+time = 0.275394s
+#v = 13016
+#t = 69035
+max_energy = 47.831
+avg_energy = 5.81725
+
+vertex smoothing...
+success = 4659(11878)
+vertex smoothing done!
+time = 49.66s
+#v = 13016
+#t = 69035
+max_energy = 47.831
+avg_energy = 5.76562
+
+updating sclaing field ...
+filter_energy = 8
+is_hit_min_edge_length = 0
+//////////////// pass 4 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 15174(15174)
+edge splitting done!
+time = 0.1205s
+#v = 28190
+#t = 149058
+max_energy = 47.831
+avg_energy = 5.29602
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 81
+success = 9830(150013)
+success(env) = 13
+success = 597(71723)
+success(env) = 2
+success = 77(16059)
+success(env) = 0
+success = 21(1925)
+success(env) = 0
+success = 3(499)
+success(env) = 0
+success = 1(65)
+success(env) = 0
+success = 0(18)
+edge collapsing done!
+time = 14.3334s
+#v = 17661
+#t = 96731
+max_energy = 44.6349
+avg_energy = 5.10317
+
+edge swapping...
+fixed 0 tangled element
+success3 = 1473
+success4 = 6087
+success5 = 811
+success = 8371(75211)
+edge swapping done!
+time = 0.755063s
+#v = 17661
+#t = 96069
+max_energy = 44.6349
+avg_energy = 4.85914
+
+vertex smoothing...
+success = 9538(16338)
+vertex smoothing done!
+time = 59.2314s
+#v = 17661
+#t = 96069
+max_energy = 44.6349
+avg_energy = 4.65941
+
+//////////////// pass 5 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 4434(4434)
+edge splitting done!
+time = 0.089705s
+#v = 22095
+#t = 116790
+max_energy = 44.6349
+avg_energy = 4.58602
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 90
+success = 4117(132678)
+success(env) = 6
+success = 156(44072)
+success(env) = 0
+success = 18(3492)
+success(env) = 1
+success = 6(415)
+success(env) = 0
+success = 0(77)
+edge collapsing done!
+time = 11.5339s
+#v = 17798
+#t = 96993
+max_energy = 44.6349
+avg_energy = 4.6431
+
+edge swapping...
+fixed 0 tangled element
+success3 = 632
+success4 = 3411
+success5 = 378
+success = 4421(68110)
+edge swapping done!
+time = 0.471531s
+#v = 17798
+#t = 96739
+max_energy = 44.6349
+avg_energy = 4.57165
+
+vertex smoothing...
+success = 9709(16446)
+vertex smoothing done!
+time = 62.5641s
+#v = 17798
+#t = 96739
+max_energy = 44.6349
+avg_energy = 4.48198
+
+updating sclaing field ...
+filter_energy = 8
+is_hit_min_edge_length = 0
+//////////////// pass 6 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 25554(25554)
+edge splitting done!
+time = 0.188596s
+#v = 43352
+#t = 231710
+max_energy = 44.7893
+avg_energy = 4.5511
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 706
+success = 16015(185471)
+success(env) = 54
+success = 1126(95413)
+success(env) = 18
+success = 145(22562)
+success(env) = 3
+success = 39(3636)
+success(env) = 0
+success = 15(805)
+success(env) = 0
+success = 3(387)
+success(env) = 0
+success = 1(49)
+success(env) = 0
+success = 0(20)
+edge collapsing done!
+time = 18.3892s
+#v = 26008
+#t = 145351
+max_energy = 44.6349
+avg_energy = 4.24277
+
+edge swapping...
+fixed 0 tangled element
+success3 = 1468
+success4 = 7979
+success5 = 762
+success = 10209(117951)
+edge swapping done!
+time = 1.22051s
+#v = 26008
+#t = 144645
+max_energy = 44.6349
+avg_energy = 4.10666
+
+vertex smoothing...
+success = 18361(24659)
+vertex smoothing done!
+time = 78.984s
+#v = 26008
+#t = 144645
+max_energy = 22.619
+avg_energy = 3.91631
+
+//////////////// pass 7 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 6693(6693)
+edge splitting done!
+time = 0.140353s
+#v = 32701
+#t = 176134
+max_energy = 22.619
+avg_energy = 3.98517
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 476
+success = 6624(146058)
+success(env) = 22
+success = 206(61951)
+success(env) = 3
+success = 22(4552)
+success(env) = 0
+success = 2(485)
+success(env) = 0
+success = 1(75)
+success(env) = 0
+success = 0(46)
+edge collapsing done!
+time = 12.5874s
+#v = 25846
+#t = 144133
+max_energy = 22.619
+avg_energy = 3.92056
+
+edge swapping...
+fixed 0 tangled element
+success3 = 390
+success4 = 3747
+success5 = 287
+success = 4424(105903)
+edge swapping done!
+time = 0.700377s
+#v = 25846
+#t = 144030
+max_energy = 22.619
+avg_energy = 3.89276
+
+vertex smoothing...
+success = 17995(24501)
+vertex smoothing done!
+time = 76.0443s
+#v = 25846
+#t = 144030
+max_energy = 22.619
+avg_energy = 3.81681
+
+updating sclaing field ...
+filter_energy = 8
+is_hit_min_edge_length = 0
+//////////////// pass 8 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 13159(13159)
+edge splitting done!
+time = 0.166865s
+#v = 39005
+#t = 211228
+max_energy = 24.5801
+avg_energy = 4.05159
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 1110
+success = 8935(255152)
+success(env) = 101
+success = 661(76989)
+success(env) = 15
+success = 83(11586)
+success(env) = 3
+success = 19(1884)
+success(env) = 1
+success = 9(395)
+success(env) = 0
+success = 2(173)
+success(env) = 0
+success = 0(44)
+edge collapsing done!
+time = 16.8451s
+#v = 29296
+#t = 163595
+max_energy = 12.1316
+avg_energy = 3.85743
+
+edge swapping...
+fixed 0 tangled element
+success3 = 438
+success4 = 4102
+success5 = 266
+success = 4806(121306)
+edge swapping done!
+time = 0.968745s
+#v = 29296
+#t = 163423
+max_energy = 11.9234
+avg_energy = 3.82279
+
+vertex smoothing...
+success = 21043(27947)
+vertex smoothing done!
+time = 75.8435s
+#v = 29296
+#t = 163423
+max_energy = 11.9234
+avg_energy = 3.73507
+
+//////////////// pass 9 ////////////////
+edge splitting...
+fixed 0 tangled element
+success = 5320(5320)
+edge splitting done!
+time = 0.149346s
+#v = 34616
+#t = 188069
+max_energy = 11.9234
+avg_energy = 3.82118
+
+edge collapsing...
+fixed 0 tangled element
+success(env) = 751
+success = 5264(236161)
+success(env) = 31
+success = 174(52276)
+success(env) = 2
+success = 12(3147)
+success(env) = 0
+success = 1(177)
+success(env) = 0
+success = 0(82)
+edge collapsing done!
+time = 12.347s
+#v = 29165
+#t = 162905
+max_energy = 11.9234
+avg_energy = 3.74389
+
+edge swapping...
+fixed 0 tangled element
+success3 = 169
+success4 = 2138
+success5 = 103
+success = 2410(116281)
+edge swapping done!
+time = 0.715487s
+#v = 29165
+#t = 162839
+max_energy = 11.9234
+avg_energy = 3.73419
+
+vertex smoothing...
+success = 20629(27811)
+vertex smoothing done!
+time = 72.2714s
+#v = 29165
+#t = 162839
+max_energy = 11.6812
+avg_energy = 3.6957
+
+updating sclaing field ...
+filter_energy = 8
+is_hit_min_edge_length = 0
+//////////////// postprocessing ////////////////
+edge collapsing...
+fixed 0 tangled element
+success(env) = 91
+success = 366(351459)
+success(env) = 4
+success = 20(34221)
+success(env) = 0
+success = 3(2410)
+success(env) = 0
+success = 0(285)
+edge collapsing done!
+time = 6.2722s
+#v = 28776
+#t = 160765
+max_energy = 11.6812
+avg_energy = 3.69609
+
+[2022-05-19 11:46:14.392] [float-tetwild] [info] mesh optimization 877.803s
+[2022-05-19 11:46:14.392] [float-tetwild] [info] 
+[2022-05-19 11:46:14.446] [float-tetwild] [info] correct_tracked_surface_orientation done
+[2022-05-19 11:46:14.820] [float-tetwild] [info] after winding number
+[2022-05-19 11:46:14.821] [float-tetwild] [info] #v = 15522
+[2022-05-19 11:46:14.822] [float-tetwild] [info] #t = 58772
+[2022-05-19 11:46:14.822] [float-tetwild] [info] winding number 0.426447s
+[2022-05-19 11:46:14.822] [float-tetwild] [info] 
+[2022-05-19 11:46:14.824] [float-tetwild] [info] Writing mesh to /home/zhongshi/Workspace/wildmeshing-toolkit/buildr/dragon-simp.obj_.msh...
+[2022-05-19 11:46:14.866] [float-tetwild] [info]  took 0.041699s

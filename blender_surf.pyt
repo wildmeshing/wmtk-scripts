@@ -10,6 +10,7 @@ for l in bpy.data.objects:
 bpy.ops.import_mesh.ply(filepath=in_name)
 
 obj = bpy.context.active_object
+print(list(bpy.data.materials))
 obj.active_material = bpy.data.materials['main']
 
 assert obj.type == 'MESH'

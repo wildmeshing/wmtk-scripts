@@ -105,10 +105,10 @@ class common_process:
         plot_scatter(f'{c.base}/scale.svg', np.asarray(timer))
 
     @classmethod
-    def blender_preprocess(c, t=0):
+    def blender_process(c, t=0):
         write_unit_scale_file(c.input, f'{c.outpath()}/{t}.obj')
-        subprocess.run('blender -b render.blend -P blender.py',
-                       shell=True, cwd=c.base)
+        blend_surf_file(f'{c.base}/render.blend', f'{c.outpath()}/{t}.obj.unit.ply',
+                        f'{c.base}/out.png', plot_edge=True)
 
 
 
@@ -129,17 +129,39 @@ def plot_scatter(filename, timer):
 
 import tempfile
 
-def blend_surf_file(blendfile, obj, png):
-
-    with open('blender_surf.py') as fp:
+def blend_surf_file(blendfile, obj, png, plot_edge=False):
+    with open('blender_surf.pyt') as fp:
         lines = [l for l in fp.readlines()]
     with tempfile.TemporaryDirectory() as tmpdirname:
         if type(obj) is not str:
             v,f = obj
             igl.write_triangle_mesh(tmpdirname + '/obj.ply', v, f)
             obj = tmpdirname + '/obj.ply'
+        print('Reading files here ', obj)
         with open(tmpdirname + '/blender.py','w') as fout:
             fout.write(f'in_name, out_png = "{obj}", "{png}"\n')
-            fout.write(f'PLOT_EDGE = False\n')
+            fout.write(f'PLOT_EDGE = {plot_edge}\n')
+            fout.writelines(lines)
+        subprocess.run(f'blender -b {blendfile} -P {tmpdirname}/blender.py', shell=True) 
+
+import meshio
+def slice_and_render(blendfile, mesh, slicer, pngpath):
+    # v, _ = igl.read_triangle_mesh(c.input)
+    # scale(v)
+
+    m = meshio.read(mesh)
+    tetv, tett = m.points, m.cells[0].data
+    V, F, marker = slicetmesh(tetv, tett, [0.27, 1, 0.35, -6.6])
+    V = use_scale(V)
+
+    with open('blender_slice.pyt') as fp:
+        lines = [l for l in fp.readlines()]
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        obj0, obj1 = tmpdirname + '/slice0.ply', tmpdirname + '/slice1.ply'
+        igl.write_triangle_mesh(obj0, V, F[marker == 0])
+        igl.write_triangle_mesh(obj1, V, F[marker == 1])
+        with open(tmpdirname + '/blender.py','w') as fout:
+            fout.write(f'cut_name, sf_name, out_png = "{obj0}", "{obj1}", "{pngpath}"\n')
+            fout.write(f'PLOT_EDGE = True\n')
             fout.writelines(lines)
         subprocess.run(f'blender -b {blendfile} -P {tmpdirname}/blender.py', shell=True) 
