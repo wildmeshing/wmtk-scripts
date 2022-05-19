@@ -1,3 +1,4 @@
+import shutil
 import plotly
 import plotly.graph_objects as go
 import numpy as np
@@ -125,3 +126,20 @@ def plot_scatter(filename, timer):
                                          gridwidth=0.5, zeroline=True),
                               geo=dict(showframe=True)
                               ).write_image(filename)
+
+import tempfile
+
+def blend_surf_file(blendfile, obj, png):
+
+    with open('blender_surf.py') as fp:
+        lines = [l for l in fp.readlines()]
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        if type(obj) is not str:
+            v,f = obj
+            igl.write_triangle_mesh(tmpdirname + '/obj.ply', v, f)
+            obj = tmpdirname + '/obj.ply'
+        with open(tmpdirname + '/blender.py','w') as fout:
+            fout.write(f'in_name, out_png = "{obj}", "{png}"\n')
+            fout.write(f'PLOT_EDGE = False\n')
+            fout.writelines(lines)
+        subprocess.run(f'blender -b {blendfile} -P {tmpdirname}/blender.py', shell=True) 

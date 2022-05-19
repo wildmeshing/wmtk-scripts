@@ -241,8 +241,16 @@ class fig6_tw(common_process):
 
 
 
+# if __name__ == '__main__':
+#     for prog in [fig4_lucy_rem]:
+#         # prog.run()
+#         # prog.log_info()
+#         prog.blender_preprocess()
+
+def render_input(cls):
+    v,f = igl.read_triangle_mesh(cls.input)
+    v = scale(v)
+    blend_surf_file(cls.base + '/render.blend', (v,f), cls.base + '/input.png')
+
 if __name__ == '__main__':
-    for prog in [fig4_lucy_rem]:
-        # prog.run()
-        # prog.log_info()
-        prog.blender_preprocess()
+    render_input(fig7_secenv)
