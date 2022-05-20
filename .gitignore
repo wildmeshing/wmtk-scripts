@@ -9,4 +9,4 @@ input_data/
 *.msh
 backup_*
 *.ply
-*.png
+*/out/*.png
