@@ -90,6 +90,7 @@ def plot_clip(V, F, marker):
 
 
 class common_process:
+    timer_unit = 1
     @classmethod
     def outpath(c):
         return f'{c.base}/out/'
@@ -103,7 +104,7 @@ class common_process:
         timer = parse_log(c.timer_regex, [
             (t, f'{c.logpath()}/{t}.log') for t in c.threads])
         np.savetxt(f"{c.base}/timer.csv", np.asarray(timer), delimiter=",")
-        plot_scatter(f'{c.base}/scale.svg', np.asarray(timer))
+        plot_scatter(f'{c.base}/scale.svg', np.asarray(timer)*[1, c.timer_unit])
 
     @classmethod
     def blender_process(c, t=0):
@@ -119,7 +120,8 @@ def plot_scatter(filename, timer):
     histocolor = 'rgb(162, 155, 254)'
 
     go.Figure(go.Scatter(x=timer[1:, 0], y=timer[1:, 1], mode='markers+lines',
-                         marker_line_width=4.5, marker_size=8,
+                        line_width = 3,
+                         marker_line_width=1.5, marker_size=8,
                          marker=dict(color=histocolor))
               ).update_layout(xaxis_type="log", yaxis_type='log',
                               paper_bgcolor='rgba(0,0,0,0)',

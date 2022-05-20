@@ -110,6 +110,7 @@ class fig3_sec(common_process):
     base = 'fig3-statue-sec/'
     input = f'input_data/Sapphos_Head.stl'
     timer_regex = r"^.*runtime (.*)$"
+    timer_unit = 1e-3
     exe = apps['sec']
     reference = 'reference_result/sec-statue-igl.obj'
 
@@ -131,6 +132,7 @@ class fig3_qslim(common_process):
     base = 'fig3-qslim/'
     input = f'input_data/48013.stl'
     timer_regex = r"^.*runtime (.*)$"
+    timer_unit = 1e-3
     exe = apps['qslim']
     reference = 'reference_result/qslim-golden-igl.obj'
 
@@ -150,6 +152,7 @@ class fig4_rem(common_process):
     base = 'fig4-hellskull-UniRem/'
     input = f'input_data/hellSkull_126k.stl'
     timer_regex = r"^.*runtime (.*)$"
+    timer_unit = 1e-3
     exe = apps['remesh']
 
     @classmethod
@@ -168,6 +171,7 @@ class fig4_lucy_rem(common_process):
     base = 'fig4-lucy-UniRem/'
     input = f'input_data/120628.stl'
     timer_regex = r"^.*runtime (.*)$"
+    timer_unit = 1e-3
     exe = apps['remesh']
     reference = 'reference_result/OpenFlipper_lucy_9.obj'
 
@@ -278,6 +282,7 @@ class fig7_secenv(common_process):
     base = 'fig7-eins-secenv/'
     input = f'input_data/einstein_big.stl'
     timer_regex = r"^.*runtime (.*)$"
+    timer_unit = 1e-3
     exe = apps['sec']
 
     @classmethod
@@ -296,6 +301,7 @@ class fig8_rem_env(common_process):
     base = 'fig8-headported-UniRemEnv/'
     input = f'input_data/head_-_ported_-_scaled.stl'
     timer_regex = r"^.*runtime (.*)$"
+    timer_unit = 1e-3
     exe = apps['remesh']
 
     @classmethod
@@ -313,10 +319,11 @@ class fig8_rem_env(common_process):
 
 
 if __name__ == '__main__':
-    #fig3_sec, fig3_qslim, fig3_sec, fig4_lucy_rem, fig6_tw, fig7_secenv, fig5_harmo,
+    for f in [fig3_sec, fig3_qslim, fig4_lucy_rem, fig7_secenv, fig8_rem_env]:
+        f.log_info();
+    #fig3_sec, fig3_    /qslim, fig3_sec, fig4_lucy_rem, fig6_tw, fig7_secenv, fig5_harmo,
     # fig6_tw_sample
     # v,f = igl.read_triangle_mesh(fig6_tw_sample.input)
     # fig1_fat.run_harmo()
-    fig3_sec.blender_process()
 
     
