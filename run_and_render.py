@@ -42,7 +42,7 @@ class fig1_fat(common_process):
         exe = apps['qslim']
         output = f'{cls.outpath()}/{t}.qslim.obj'
         params = [basepath + exe, cls.input, output] + \
-            f'-j {t} -t 1e-2'.split()
+            f'-j {t} -t 5e-3'.split()
         print(' '.join(params))
         with open(f'{cls.logpath()}/{t}.qslim.log', 'w') as fp:
             subprocess.run(params, stdout=fp)
@@ -61,19 +61,20 @@ class fig1_fat(common_process):
     @classmethod
     def run_harmo(cls):
         t = 32
+        inp = f'{cls.outpath()}/10.tetra.msh_final.msh'
         output = f'{cls.outpath()}/{t}.harmo.msh'
-        params = [basepath + apps['harmo'], cls.input, output] + \
-            f'--harmonize -j {t}'.split()
+        params = [basepath + apps['harmo'], inp, output] + \
+            f'-j {t}'.split()
         print(' '.join(params))
-        with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
+        with open(f'{cls.logpath()}/{t}.harmo.log', 'w') as fp:
             subprocess.run(params, stdout=fp)
 
     @classmethod
     def run(cls):
         cls.run_tw()
         cls.run_harmo()
-        cls.run_secenv()
         cls.run_remenv()
+        cls.run_qslim()
 
     @classmethod
     def log_info(c):
@@ -86,25 +87,23 @@ class fig1_fat(common_process):
 
     @classmethod
     def blender_process(c, t=32):
-        v, _ = igl.read_triangle_mesh(c.input)
+        v, f = igl.read_triangle_mesh(c.input)
         scale(v)
-        # slice_and_render(blendfile=f'{c.base}/render.blend', mesh=f'{c.outpath()}/{t}.tetra.msh_final.msh',
-        #  slicer=[0.27, 1, 0.35, -6.6], pngpath=f'{c.base}/tetra.png')
-        for key in ['qslim']:  # , 'remesh']:
+        blfile = f'{c.base}/render.blend'
+
+        blend_surf_file(blfile, (use_scale(v), f), f'{c.base}/input.png', plot_edge=False)
+        
+        for key in ['qslim' , 'remesh']:
             v1, f1 = igl.read_triangle_mesh(f'{c.outpath()}/{t}.{key}.obj')
             blend_surf_file(blendfile=f'{c.base}/render.blend', obj=(
                 use_scale(v1), f1), png=f'{c.base}/{key}.png', plot_edge=True)
 
-        # m = meshio.read(outname)
-        # tetv, tett = m.points, m.cells[0].data
-
-        # V, F, marker = slicetmesh(tetv, tett, )
-        # V = use_scale(V)
-        # igl.write_triangle_mesh(outname + '.slice0.ply', V, F[marker == 0])
-        # igl.write_triangle_mesh(outname + '.slice1.ply', V, F[marker == 1])
-        # subprocess.run('blender -b render.blend -P blender.py',
-        #                shell=True, cwd=c.base)
-
+        slice_and_render(blfile, 
+        mesh=f'{c.outpath()}/10.tetra.msh_final.msh',
+         slicer=[0.27, 1, 0.35, -6.6], pngpath=f'{c.base}/tetra.png')
+        slice_and_render(blfile, 
+        mesh=f'{c.outpath()}/32.harmo.msh',
+         slicer=[0.27, 1, 0.35, -6.6], pngpath=f'{c.base}/harmo.png')
 
 class fig3_sec(common_process):
     threads = [0, 1, 2, 4, 8, 16, 32]
@@ -241,16 +240,8 @@ class fig6_tw(common_process):
         v, _ = igl.read_triangle_mesh(c.input)
         scale(v)
 
-        outname = f'{c.outpath()}/{t}.msh_final.msh'
-        m = meshio.read(outname)
-        tetv, tett = m.points, m.cells[0].data
-
-        V, F, marker = slicetmesh(tetv, tett, [0.9, 0.4, 0.7, -2.8])
-        V = use_scale(V)
-        igl.write_triangle_mesh(outname + '.slice0.ply', V, F[marker == 0])
-        igl.write_triangle_mesh(outname + '.slice1.ply', V, F[marker == 1])
-        subprocess.run('blender -b render.blend -P blender.py',
-                       shell=True, cwd=c.base)
+        slice_and_render(blendfile=f'{c.base}/render.blend', mesh=f'{c.outpath()}/{t}.msh_final.msh',
+         slicer=[0, 0, -1, 0], pngpath=f'{c.base}/out.png')
 
 class fig6_tw_sample(common_process):
     base = 'fig6-tw-sample/'
@@ -271,20 +262,14 @@ class fig6_tw_sample(common_process):
 
     @classmethod
     def blender_process(c, t=0):
-        v, _ = igl.read_triangle_mesh(c.input)
+        v, f = igl.read_triangle_mesh(c.input)
         scale(v)
+        blend_surf_file(blendfile=f'{c.base}/render.blend', obj=(scale(v), f), png=f'{c.base}/input.png', plot_edge=False)
 
-        outname = f'{c.outpath()}/{t}.msh_final.msh'
-        m = meshio.read(outname)
-        tetv, tett = m.points, m.cells[0].data
-
-        V, F, marker = slicetmesh(tetv, tett, [0.9, 0.4, 0.7, -2.8])
-        V = use_scale(V)
-        igl.write_triangle_mesh(outname + '.slice0.ply', V, F[marker == 0])
-        igl.write_triangle_mesh(outname + '.slice1.ply', V, F[marker == 1])
-        subprocess.run('blender -b render.blend -P blender.py',
-                       shell=True, cwd=c.base)
-
+        slice_and_render(blendfile=f'{c.base}/render.blend', mesh='reference_result/dragon.msh',
+         slicer=[0, 0, -1, 0], pngpath=f'{c.base}/tetwild.png')
+        slice_and_render(blendfile=f'{c.base}/render.blend', mesh=f'{c.outpath()}/{t}.msh_final.msh',
+         slicer=[0, 0, -1, 0], pngpath=f'{c.base}/out.png')
 
 class fig7_secenv(common_process):
     threads = [0, 1, 2, 4, 8, 16, 32]
@@ -322,18 +307,14 @@ class fig8_rem_env(common_process):
                 subprocess.run(params, stdout=fp)
 
 
-def render_input(cls):
-    v, f = igl.read_triangle_mesh(cls.input)
-    v = scale(v)
-    blend_surf_file(cls.base + '/render.blend',
-                    (v, f), cls.base + '/input.png')
+
 
 
 if __name__ == '__main__':
-    # for f in [fig3_qslim, fig3_sec, fig4_lucy_rem, fig4_rem, fig5_harmo, fig6_tw, fig7_secenv, fig8_rem_env]:
-        # f.run()
-        # f.log_info()
+    #fig3_sec, fig3_qslim, fig3_sec, fig4_lucy_rem, fig6_tw, fig7_secenv, fig5_harmo,
+    # fig6_tw_sample
+    # v,f = igl.read_triangle_mesh(fig6_tw_sample.input)
+    # fig1_fat.run_harmo()
+    fig1_fat.blender_process()
 
-    f = fig6_tw_sample
-    f.run()
-    f.log_info()
+    

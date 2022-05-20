@@ -110,6 +110,7 @@ class common_process:
         write_unit_scale_file(c.input, f'{c.outpath()}/{t}.obj')
         blend_surf_file(f'{c.base}/render.blend', f'{c.outpath()}/{t}.obj.unit.ply',
                         f'{c.base}/out.png', plot_edge=True)
+        render_input(c)
 
 
 
@@ -152,7 +153,7 @@ def slice_and_render(blendfile, mesh, slicer, pngpath):
 
     m = meshio.read(mesh)
     tetv, tett = m.points, m.cells[0].data
-    V, F, marker = slicetmesh(tetv, tett, [0.27, 1, 0.35, -6.6])
+    V, F, marker = slicetmesh(tetv, tett, slicer)
     V = use_scale(V)
 
     with open('blender_slice.pyt') as fp:
@@ -166,3 +167,9 @@ def slice_and_render(blendfile, mesh, slicer, pngpath):
             fout.write(f'PLOT_EDGE = True\n')
             fout.writelines(lines)
         subprocess.run(f'blender -b {blendfile} -P {tmpdirname}/blender.py', shell=True) 
+
+def render_input(cls):
+    v, f = igl.read_triangle_mesh(cls.input)
+    v = scale(v)
+    blend_surf_file(cls.base + '/render.blend',
+                    (v, f), cls.base + '/input.png')
