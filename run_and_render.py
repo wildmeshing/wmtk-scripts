@@ -342,10 +342,11 @@ if __name__ == '__main__':
     # for f in [fig3_sec, fig3_qslim, fig4_lucy_rem, fig7_secenv, fig8_rem_env]:
         # f.log_info();
     #fig3_sec, fig3_    /qslim, fig3_sec, fig4_lucy_rem, fig6_tw, fig7_secenv, fig5_harmo,
+    fig1_fat.blender_process()
     # fig6_tw_sample
-    # v,f = igl.read_triangle_mesh(fig6_tw_sample.input)
-    # fig1_fat.run_harmo()
+    # v,f = igl.read_triangle_mesh('fig1-fat/out/32.remesh.obj')
 
-    render_input(fig3_qslim_up)
+    # igl.write_triangle_mesh('temp.ply', scale(v), f)
+    # render_input(fig3_qslim_up)
     # fig3_qslim_up.blender_process()
     
