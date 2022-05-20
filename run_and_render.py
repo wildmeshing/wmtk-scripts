@@ -145,6 +145,26 @@ class fig3_qslim(common_process):
             print(' '.join(params))
             with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
                 subprocess.run(params, stdout=fp)
+    
+class fig3_qslim_up(common_process):
+    threads = [0, 1, 2, 4, 8, 16, 32]
+    base = 'fig3-qslim-up/'
+    input = f'input_data/upsampled_golden.obj'
+    timer_regex = r"^.*runtime (.*)$"
+    timer_unit = 1e-3
+    exe = apps['qslim']
+    reference = 'reference_result/upsample_qslim.obj'
+
+    @classmethod
+    def run(cls):
+        for t in cls.threads[::-1]:
+            output = f'{cls.outpath()}/{t}.obj'
+            params = [basepath + cls.exe, cls.input,
+                      output] + f'-j {t} -t 0.01'.split()
+            print(' '.join(params))
+            with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
+                subprocess.run(params, stdout=fp)
+
 
 
 class fig4_rem(common_process):
@@ -319,11 +339,13 @@ class fig8_rem_env(common_process):
 
 
 if __name__ == '__main__':
-    for f in [fig3_sec, fig3_qslim, fig4_lucy_rem, fig7_secenv, fig8_rem_env]:
-        f.log_info();
+    # for f in [fig3_sec, fig3_qslim, fig4_lucy_rem, fig7_secenv, fig8_rem_env]:
+        # f.log_info();
     #fig3_sec, fig3_    /qslim, fig3_sec, fig4_lucy_rem, fig6_tw, fig7_secenv, fig5_harmo,
     # fig6_tw_sample
     # v,f = igl.read_triangle_mesh(fig6_tw_sample.input)
     # fig1_fat.run_harmo()
 
+    render_input(fig3_qslim_up)
+    # fig3_qslim_up.blender_process()
     
