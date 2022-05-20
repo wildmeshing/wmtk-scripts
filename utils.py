@@ -13,6 +13,7 @@ basepath = '/home/zhongshi/Workspace/wildmeshing-toolkit/buildr/'
 apps = dict(remesh='app/remeshing_app',
             tetra='app/tetwild/tetwild',
             harmo='app/harmonic_tet/wmtk_harmonic_tet_bin',
+            qslim='app/qslim_app',
             sec='app/sec_app')
 
 
@@ -117,7 +118,7 @@ def plot_scatter(filename, timer):
     histocolor = 'rgb(162, 155, 254)'
 
     go.Figure(go.Scatter(x=timer[1:, 0], y=timer[1:, 1], mode='markers+lines',
-                         marker_line_width=1.5, marker_size=8,
+                         marker_line_width=4.5, marker_size=8,
                          marker=dict(color=histocolor))
               ).update_layout(xaxis_type="log", yaxis_type='log',
                               paper_bgcolor='rgba(0,0,0,0)',
