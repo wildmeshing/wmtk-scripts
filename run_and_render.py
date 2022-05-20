@@ -111,6 +111,7 @@ class fig3_sec(common_process):
     input = f'input_data/Sapphos_Head.stl'
     timer_regex = r"^.*runtime (.*)$"
     exe = apps['sec']
+    reference = 'reference_result/sec-statue-igl.obj'
 
     @classmethod
     def run(cls):
@@ -121,6 +122,7 @@ class fig3_sec(common_process):
             print(' '.join(params))
             with open(f'{cls.logpath()}/{t}.log', 'w') as fp:
                 subprocess.run(params, stdout=fp)
+        
 
 
 
@@ -130,6 +132,7 @@ class fig3_qslim(common_process):
     input = f'input_data/48013.stl'
     timer_regex = r"^.*runtime (.*)$"
     exe = apps['qslim']
+    reference = 'reference_result/qslim-golden-igl.obj'
 
     @classmethod
     def run(cls):
@@ -166,6 +169,7 @@ class fig4_lucy_rem(common_process):
     input = f'input_data/120628.stl'
     timer_regex = r"^.*runtime (.*)$"
     exe = apps['remesh']
+    reference = 'reference_result/OpenFlipper_lucy_9.obj'
 
     @classmethod
     def run(cls, threads=None):
@@ -198,7 +202,7 @@ class fig5_harmo(common_process):
                 subprocess.run(params, stdout=fp)
 
     @classmethod
-    def blender_reference(c):
+    def blender_process(c, t=32):
         outname = 'reference_result/reference-res.msh'
         m = meshio.read(outname)
         tetv, tett = m.points, m.cells[0].data
@@ -207,13 +211,11 @@ class fig5_harmo(common_process):
         blend_surf_file(blendfile=f'{c.base}/render.blend', obj=(V, F[marker == 0]), png=f'{c.base}/ref.png',
                         plot_edge=True)
 
-    @classmethod
-    def blender_process(c, t=32):
         outname = f'{c.outpath()}/{t}.msh'
         m = meshio.read(outname)
         tetv, tett = m.points, m.cells[0].data
         tetv = scale(tetv)
-        V, F, marker = slicetmesh(tetv, tett, [-1, 0, 0, 0.6])
+        V, F, marker = slicetmesh(tetv, tett, [-1, 0, 0, 0.8])
         blend_surf_file(blendfile=f'{c.base}/render.blend', obj=(V, F[marker == 0]), png=f'{c.base}/out.png',
                         plot_edge=True)
 
@@ -315,6 +317,6 @@ if __name__ == '__main__':
     # fig6_tw_sample
     # v,f = igl.read_triangle_mesh(fig6_tw_sample.input)
     # fig1_fat.run_harmo()
-    fig1_fat.blender_process()
+    fig3_sec.blender_process()
 
     

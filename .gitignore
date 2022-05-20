@@ -10,3 +10,4 @@ input_data/
 backup_*
 *.ply
 */out/*.png
+reference_result/*.obj

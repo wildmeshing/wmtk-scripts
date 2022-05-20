@@ -173,3 +173,8 @@ def render_input(cls):
     v = scale(v)
     blend_surf_file(cls.base + '/render.blend',
                     (v, f), cls.base + '/input.png')
+            
+    if cls.reference is not None:
+        v1, f1 = igl.read_triangle_mesh(cls.reference)
+        blend_surf_file(cls.base + '/render.blend',
+                    (use_scale(v1), f1), cls.base + '/ref.png', plot_edge=True)
