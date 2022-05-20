@@ -8,3 +8,5 @@ __pycache__/
 input_data/
 *.msh
 backup_*
+*.ply
+*.png
